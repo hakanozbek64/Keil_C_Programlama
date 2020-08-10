@@ -1,0 +1,63 @@
+C51 COMPILER V8.02   TEXT1                                                                 04/16/2010 20:40:25 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE TEXT1
+OBJECT MODULE PLACED IN Text1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Text1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51cc01.h>
+   2          #define display P2
+   3          #define Say P3_2
+   4          char k,l,m,f;
+   5          void gecikme()
+   6          {
+   7   1      for(k=0;k<20;k++)
+   8   1      {
+   9   2      TH1=-50000/256;
+  10   2      TL1=-50000%255;
+  11   2      TR1=1;
+  12   2      while(TF1==0);
+  13   2      TF1=0;
+  14   2      }
+  15   1      TR1=0;
+  16   1      }
+  17          void geri()
+  18          {
+  19   1      m=TL0;
+  20   1      
+  21   1      for(f=0;f<m+1;f++)
+  22   1      {
+  23   2      if(TL0>9){TL0=9;}
+  24   2      display=TL0;
+  25   2      gecikme();
+  26   2      TL0--;
+  27   2      }
+  28   1      }
+  29          void main()
+  30          {
+  31   1      display=0;
+  32   1      TMOD=0x15;
+  33   1      TR0=1;
+  34   1      while(1)
+  35   1      {
+  36   2      if(Say==0){ geri(); }
+  37   2      
+  38   2      }
+  39   1      
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    104    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

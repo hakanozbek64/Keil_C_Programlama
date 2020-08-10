@@ -1,0 +1,44 @@
+C51 COMPILER V8.08   TEXT1                                                                 05/11/2010 12:39:17 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE TEXT1
+OBJECT MODULE PLACED IN Text1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Text1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1                             #include <reg51.h>
+   2          sbit P1_0 = P1^0;
+   3          sbit P1_7 = P1^7;
+   4          void x(void) interrupt 1 /* timer 0 interrupt */
+   5          { P1_0 =~P1_0;
+   6   1      }
+   7          void y(void) interrupt 3 /* timer 0 interrupt */
+   8          { P1_7 =~P1_7;
+   9   1      }
+  10          void main (void)
+  11          {
+  12   1      TMOD = 0x22; /* 8 bit oto. Yük. mod seç */
+  13   1      TH0 = 231;
+  14   1      TH1 = 236; /* Oto. Yük. deðeri 50 mikrosaniye*/
+  15   1      TR0 = 1;
+  16   1      TR1 = 1; /* T0’ý baþlat */
+  17   1      EA = 1; /* global interrupt enable */
+  18   1      ET0 = 1;
+  19   1      ET1 = 1; /* zamanlayýcý kesmesi devrede */
+  20   1      while(1); /* Sonsuz döngü */
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     27    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,62 @@
+C51 COMPILER V8.02   TEXT1                                                                 04/06/2010 15:48:02 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE TEXT1
+OBJECT MODULE PLACED IN Text1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Text1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg51cc01.h>
+   2          #define Led P2
+   3            char a;
+   4           
+   5          void bekle()
+   6          {        
+   7   1              for(a=0;a<20;a++)
+   8   1              {
+   9   2              TH0=-50000/256;
+  10   2              TL0=-50000%255;
+  11   2              TR0=1;
+  12   2              while(TF0==0);
+  13   2              TF0=0;
+  14   2              }
+  15   1      }
+  16          void binary()
+  17          {       
+  18   1               Led=Led+1;
+  19   1               
+  20   1      }
+  21          void yuruyen()
+  22          {
+  23   1           if(Led==128){Led=1;}
+  24   1               Led=Led*2;
+  25   1               
+  26   1               
+  27   1      }
+  28          char x;
+  29          void main()
+  30          {
+  31   1              TMOD=0x01;
+  32   1              x=0;
+  33   1              while(1)
+  34   1              {       if(P1_0==0){ x=~x; }
+  35   2              if(x==0){binary();}
+  36   2              else{ yuruyen();}
+  37   2              bekle();
+  38   2              }
+  39   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     71    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

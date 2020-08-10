@@ -1,0 +1,76 @@
+C51 COMPILER V8.08   TEXT1                                                                 05/11/2010 11:20:07 PAGE 1   
+
+
+C51 COMPILER V8.08, COMPILATION OF MODULE TEXT1
+OBJECT MODULE PLACED IN Text1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Text1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1                           #include<reg51cc01.h>
+   2          char x;
+   3          void bekle()
+   4          {
+   5   1      char i;
+   6   1      for(i=0;i<10;i++)
+   7   1      {
+   8   2      TMOD=0x01;
+   9   2      TH0=0x3C;
+  10   2      TL0=0xB0;
+  11   2      TR0=1;
+  12   2      while(TF0==0);
+  13   2      TF0=0;
+  14   2      }
+  15   1      }
+  16          
+  17          void ileri() interrupt 0
+  18          {
+  19   1      x=~x;
+  20   1      }
+  21           char a;
+  22          void main()
+  23          {  
+  24   1      a=0;
+  25   1              x=0;
+  26   1              P1=0;
+  27   1              EX0=1;
+  28   1              EX1=1;
+  29   1              EA=1;
+  30   1              IT0=1;
+  31   1              IT1=1;
+  32   1              while(1)
+  33   1              {
+  34   2                      
+  35   2                      if(x==0)
+  36   2                      {
+  37   3                      bekle();
+  38   3                      a++;
+  39   3                      P1=a;                    
+  40   3                      if (a==10) a=0;P1=a;
+  41   3                      }
+  42   2                      else
+  43   2                      {
+  44   3                      bekle();
+  45   3                      a--;
+  46   3                      P1=a;
+  47   3                      if (a==0){ bekle();a=9;P1=a;  }
+  48   3                      }
+  49   2              
+  50   2              }
+  51   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     92    ----
+C51 COMPILER V8.08   TEXT1                                                                 05/11/2010 11:20:07 PAGE 2   
+
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

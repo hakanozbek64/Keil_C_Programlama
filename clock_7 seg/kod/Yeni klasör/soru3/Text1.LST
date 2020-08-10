@@ -1,0 +1,52 @@
+C51 COMPILER V8.02   TEXT1                                                                 04/17/2010 22:15:28 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE TEXT1
+OBJECT MODULE PLACED IN Text1.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE Text1.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg51cc01.h>
+   2          #define display P2
+   3          void artir()
+   4          {
+   5   1              if(display==9){display=0;}
+   6   1              else{ display++;}
+   7   1      }
+   8          void main()
+   9          {
+  10   1              TMOD=0x06;
+  11   1              display=0;
+  12   1              ET0=0;
+  13   1       
+  14   1              
+  15   1              TR0=1;
+  16   1      
+  17   1              while(1)
+  18   1              {
+  19   2              
+  20   2              TL0=246;
+  21   2                      while(TF0==0);
+  22   2                      TF0=0;
+  23   2                      artir();
+  24   2              }
+  25   1      
+  26   1      
+  27   1      
+  28   1      
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     35    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

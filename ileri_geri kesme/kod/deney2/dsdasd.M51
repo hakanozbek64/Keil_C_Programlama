@@ -1,0 +1,116 @@
+BL51 BANKED LINKER/LOCATER V6.05                                                        05/11/2010  12:14:53  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.05, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Text1.obj TO dsdasd
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  Text1.obj (TEXT1)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  dsdasd (TEXT1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?TEXT1
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     0005H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     001FH     UNIT         ?PR?GERI?TEXT1
+            CODE    081FH     0018H     UNIT         ?PR?MAIN?TEXT1
+            CODE    0837H     000DH     UNIT         ?PR?ILERI?TEXT1
+            CODE    0844H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   dsdasd (TEXT1)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TEXT1
+
+
+
+SYMBOL TABLE OF MODULE:  dsdasd (TEXT1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TEXT1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.05                                                      05/11/2010  12:14:53  PAGE 2
+
+
+  D:00C0H         PUBLIC        P4
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IEN0
+  D:00E8H         PUBLIC        IEN1
+  D:00B8H         PUBLIC        IPL0
+  D:00F8H         PUBLIC        IPL1
+  C:0837H         PUBLIC        ileri
+  D:00D8H         PUBLIC        CCON
+  C:081FH         PUBLIC        main
+  C:0800H         PUBLIC        geri
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  B:00A8H.2       PUBLIC        EX1
+  B:0088H.2       PUBLIC        IT1
+  D:00C8H         PUBLIC        T2CON
+  D:0008H         PUBLIC        x
+  -------         PROC          ILERI
+  C:0837H         LINE#         3
+  C:0839H         LINE#         5
+  C:0841H         LINE#         6
+  -------         ENDPROC       ILERI
+  -------         PROC          GERI
+  C:0800H         LINE#         7
+  C:0809H         LINE#         9
+  C:0810H         LINE#         10
+  C:0818H         LINE#         11
+  -------         ENDPROC       GERI
+  -------         PROC          MAIN
+  C:081FH         LINE#         13
+  C:081FH         LINE#         14
+  C:081FH         LINE#         16
+  C:0822H         LINE#         17
+  C:0828H         LINE#         18
+  C:082AH         LINE#         19
+  C:082CH         LINE#         20
+  C:082EH         LINE#         21
+  C:0830H         LINE#         22
+  C:0832H         LINE#         23
+  C:0832H         LINE#         24
+  C:0832H         LINE#         25
+  C:0835H         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TEXT1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004AH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=89
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Dell\Desktop\keil_1\deneme_1.uvproj
+Project File Date:  08/04/2012
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+compiling deneme_1.c...
+linking...
+Program Size: data=9.0 xdata=0 code=25
+creating hex file from "deneme_1"...
+"deneme_1" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=25
+creating hex file from "deneme_1"...
+"deneme_1" - 0 Error(s), 0 Warning(s).
+Rebuild target 'Target 1'
+compiling deneme_1.c...
+linking...
+Program Size: data=9.0 xdata=0 code=25
+creating hex file from "deneme_1"...
+"deneme_1" - 0 Error(s), 0 Warning(s).
